@@ -1,0 +1,61 @@
+.sideBar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    @include media(600){
+        &{
+            width: 30px;
+        }
+    }
+    ul{
+        width: 100%;
+        @include flex($direction: column, $wrap: column nowrap, $justify-content: center);
+        li{
+            cursor: pointer;
+            padding: 1rem 0;
+
+        }
+
+    }
+    .sideBar-Btn{
+        text-align: center;
+        width: 30px;
+        i{
+            line-height: 100vh;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            color: $light;
+            @include transition(background-color, 2);
+            @include transition(transform, 1);
+            @include media(600){
+                &{
+                    @include transform(rotate(180deg));
+                }
+            }
+        }
+    }
+
+}
+.sideBar[data-visibility="true"]{
+    @include media(600){
+        min-width: 100%;
+        z-index: 1;
+    }
+}
+.sideBar[data-visibility="false"]{
+    @include media(600){
+        li{
+            display: none;
+        }
+        i{
+            width: 30px;
+        }
+    }
+}

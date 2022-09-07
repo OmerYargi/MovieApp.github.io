@@ -1,0 +1,44 @@
+@mixin transition($var, $duration) {
+    transition: $var #{$duration}s;
+    -o-transition: $var #{$duration}s;
+    -moz-transition: $var #{$duration}s;
+    -webkit-transition: $var #{$duration}s;
+}
+@mixin transform($var) {
+    transform: $var;
+    -o-transform: $var;
+    -moz-transform: $var;
+    -webkit-transform: $var;
+}
+@mixin flex($direction: row, $wrap: $direction wrap, $justify-content: space-around, $align-items: center){
+    display: flex;
+    flex-direction: $direction;
+    flex-flow: $wrap;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+@mixin border($color: $dark){
+    border: 1px solid $color;
+    border-radius: 1rem;
+}
+@mixin media($var){
+    @media (max-width: #{$var}px) {
+        @content;
+    }
+}
+@mixin animation($name, $duration){
+    animation-name: $name;
+    -o-animation-name: $name;
+    -moz-animation-name: $name;
+    -webkit-animation-name: $name;
+    animation-duration: $duration;
+    -o-animation: $duration;
+    -moz-animation-duration: $duration;
+    -webkit-animation-duration: $duration;
+}
+@mixin background($link){
+    background-image: #{$link};
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

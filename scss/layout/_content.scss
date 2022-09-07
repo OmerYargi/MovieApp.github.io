@@ -1,0 +1,58 @@
+.content{
+    width: calc(100% - 150px);
+    align-self: flex-end;
+    padding-bottom: 1.5rem;
+    @include media(600){
+        &{
+            width: calc(100% - 30px);
+        }
+    }
+    .content-bg-img{
+        @include background(url("../img/inception.jpg"));
+        height: 70vh;
+        width: 100%;
+    }
+    .films{
+        @include flex();
+        margin-top: -20vh;
+        .filmsBox{
+            cursor: pointer;
+            position: relative;
+            width: 12rem;
+            height: 19rem;
+            margin: 1.5rem 1rem;
+            @include background(url("https://m.media-amazon.com/images/M/MV5BODY3OGEyMTgtYTZjZi00Y2YzLWFjY2UtMjEwYWE1MjRkOTc4XkEyXkFqcGdeQXVyODQxMTI4MjM@._V1_UX182_CR0,0,182,268_AL_.jpg"));
+            @include transition(transform, .5);
+            &:hover{
+                @include transform(scale(1.08));
+                .fadeDown{
+                    opacity: 1;
+                    transform: translateY(1.5rem);
+                }
+            }
+            @include media(526){
+                &{
+                    width: 9rem;
+                    height: 13rem;
+                    margin: .5rem .1rem;
+                    &:hover{
+                        @include transform(scale(1.05));
+                        .fadeDown{
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+            .fadeDown{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0;
+                opacity: 0;
+                @include transition(transform, .5);
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,17 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/sideBar";
+@import "layout/content";
+@import "layout/details";
+
+body{
+    background-color: $secondary-color;
+}
+.container{
+    display: flex;
+    justify-content: flex-end;
+}
